@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang='EN'>
+<head>
+	<meta charset="utf-8">
+	<title>Testing out sublime</title>
+</head>
+<body>
+	Testing sublime to see usability
+</body>
+</html>
+
+<!--block level elements can contain other blockline or inline elements. Start on a new line. 
+	In line elements render on the same line and can only contain other inline elements
+	HTML5 replaces the above with set of content categories
+	Block translate to flow content
+	inline translate to phrasing content
+	<div> stands for division most generic block level element
+		<span> stands for span - generic inline element
+	h1-h6 tags are for headers
+	header - used for header 
+	nav - navigation
+	section determines a section
+	article
+	aside - info not necessarily related to main info
+	footer
+
+	all the above are block, but for semantics useful for readability. 
+
+Lists
+	<ul> unordereder list, and <li> within it
+	This can be nested e.g.
+	<div>Shopping List</div>
+	<ul>
+			<li>Milk</li>
+				<li>Biscuits
+					<ul>
+						<li>Cookies</li>
+						<li>Bourbons</li>
+					</ul>
+				</li>
+			<li>Chicken</li>
+	</ul>
+
+	The same can be applied for ordered lists <ol></ol>
+
+Character entity references
+	
+	3 characters that need to be 'escaped' so as not to cause rendering issue < > &
+
+	< use &lt;
+	> use &gt;
+	& use &amp;
+	copywright use &copy;
+
+	to make sure certain content is always kept on the same line regardless if the page moves to the next line due to webpage size use a non-breaking space  &nbsp; inbetween the words
+
+	&quot; instead of "" but this depends on the encoding of the browser
+
+Links
+
+	<a href=""></a> a element a href is used for links. Hypertext reference
+
+	href can be relative or absolute url. title= attribute can follow href within the tag used for screen readers
+
+	a is for anchor
+
+	content between opening and closing a tag is what will be seen. 
+
+	div can be used within <a></a> tag
+
+	a tag is both block and inline element
+
+	target= attribute when set to '_blank' means links open in new window or tab
+
+
+	links can point to sections of the page. eample within list 
+
+	<ul>
+		<li><a href="#section1">#section1</a></li>
+		<li><a href="#section2">#section2</a></li>
+	</ul>
+
+	The section would then need to be pointed to a section tag using id attribute e.g
+
+	<section id='section1'> 
+		<h2>(#section1) Section 1</h2>
+	</section>	
+
+	<footer><a href="Top">Back To Top</a></footer> (would need <h1 id='Top'>Header</h1>)
+
+Displaying images
+
+	<img src=""> img is the tag with src being the attribute
+	width and height are other useful attributes. alt is an attribute for screenreaders
+
+	img is an inline element
+
+	width and height attributes are useful to reserve page space so that even if the image took long to load, the browsers knows there is something to be added there. it can make things jumpy without it being added
+
+	developer tools on browers and use of throttling can be used to simulate slow internet. In addition it helps maintain intended layout if the url is broken. 
+
+
+
+CSS Rules
+
+	Consists of selector for example p (paragraph tag) would apply to every p tag in content page. 
+	Followed by curly braces 
+	inside braces, have the CSS declaration (which consists of the property 'colour' and the value 'blue')
+
+	e.g
+
+		p {
+			colour: blue;
+		}
+
+	declaration is separated by colon and terminated by semi-colon
+
+	typical styling should have the below
+
+		p {
+			colour: blue;
+			font-size: 20px;
+			width: 200px;
+			text-align: centre;
+		}
+
+	All forms a part of the style sheet and placed in head tag of html document. Can also be in separate document and linked
+
+		 <style type="css">
+		 		p { 
+		 			Colour: green;
+		 		}
+
+		</style>
+
+CSS selectors
+
+	Used to determine which element or set of elements to apply the css declarations to
+
+	Browser uses the selector API to traverse the DOM (Document Object Model) and pick the elements matching the selector
+
+	Java scripts also uses selector API to attach behaviour and data to html elements
+
+	element, class and id selectors
+
+	Element - specifying element name
+	<p> selector would be document to style any P element
+
+	Class, specified with a period . to determine the class
+
+	e.g. .blue {colour: blue;	}
+		<p class='blue'> anything in this would be blue</p>
+		<div class='blue'>anything here would be blue</div>
+
+	When using the class in the hmtl the period isn't shown
+
+	ID selector - preceded by # and then an id
+
+	e.g #name {colour: green;}
+		<p id='name'> this would be green</p>
+
+	Separate selectors can be combined separated by a , comma
+
+	e.g div, #name {colour: blue;}
+		<p id='name'> this would be blue</p>
+		<div>this would also be blue</div>
+
+Combining Selectors
+
+	If you wanted to target certain elements with a specific class then combining will allow for this. 
+
+	e.g. p.big would target all paragraphs with big class so then using the class P or big separately wouldn't impact this. 
+
+	Ensure no spaces within the selectors
+
+	child selectors can be combined so that direct child elements can be targeted. 
+
+	e.g. article > p {colour: blue;}, this selector would only impact P elements that are directly within an article element. if the p was within the article element but again inside a div element, this would be unaffected. 
+
+	e.g <article> <p>This would change colour</p></a></article>
+		<article><div><p>This would not change due to div</p></div></article>
+
+	Descendent selector
+
+	article p (without > sign like child selector) {colour:blue;}
+
+	This would target any P element within the parent irrespective of how deep it is. 
+
+	This isn't limited to element selectors but can be used with class/id selectors. 
+
+	other selectors
+		Adjacent sibiling (selector + selector)
+		General sibility (selector ~ selector)
+
+Pseudo Class Selectors
+
+	Specifying by selector:pseudo-class 
+
+	examples
+	:link
+	:visited
+	:hover
+	:active
+	:nth-child(...)
+
+	list-style: none; (removes bullet points)
+	text-decoration: none; (removes underlines)
+	display: block; (can convert an inline into block level)
+
+	pseudo selectors can also be combined in addition to combination of selectors. 
+
+	e.g header li:hover:nth-child(3) {colour:blue;}
+
+	This would change the colour of the 3rd item in the list (within header section) to blue when it is being hovered over. 
+
+Style placement
+
+	Although the above the CSS has been placed in its own element within the head element, style can be used as an attributed within the element tag
+
+	called inline styling which is not reuseable.
+
+	both head element and inline styling however is not reusable across multiple pages on the same wesbite. This is because the code is linked to a particular page. In order to re-use styling across pages, we would have a separate css style sheet saved as xxx.CSS
+
+	in order to utilise the styling, in the head tag we would have 
+
+	<link rel="stylesheet" type="text/css" href="stylesheet.css">
+
+	style='visibility: hidden;'
+
+	^^ can use this to hide certain elements
+
+Conflict Resolutions
+
+	Cascading algorithm is used to determine which css rules takes precendent if there is ever a conflict
+
+	Need to understand 4 concepts
+
+	origin
+		Last declarations wins (processed sequentially) i.e. the lower down they are in the code, the more precedence they have. For external style sheets, treat it as if the rules were in the head element and before any inline styling. <link> would typically be used before <style>.
+
+	merge
+
+		If there is no conflict, but declarations are combined then they will merge. e.g. font-size: 10px for .size and colour: blue; for <p>, then these may not conflict and so they merge.
+
+	inhertiance
+
+		DOM - if you declare a style at the top of the tree, then everything below it will inherit it's style (unless overwritten by lower declarations)
+
+	specificity
+		
+		Most specific selector combination wins
+		Selectors with highest score win. 
+
+		p {} 							Score 0001
+		p.class {}						Score 0011
+		P.class div:hover:nth-child(1)	Score 0032
+		p #name {}						Score 0101
+		style=''						Score 1000
+
+		Most specific would be defining the style attribute on the element itself in html rather than css. 
+
+
+		1) Style=
+		2) ID
+		3) Class, Pseudo-class, attribute
+		4) # of elements
+
+		e.g 
+
+		<div style="colour: green;"> Scoree of 1000</div>
+		div p {colour: green;} - score of 0002 (no style, no id, no class and 2 elements)
+
+		div #name {colour: blue;} OR div.big p {colour: green;}
+
+		Score 0101 						Score 0012
+
+		To override any rules or specificity, using !important would utilise that rule where possible.
+
+
+Styling Text
+
+		font-family
+			seful to choose multiple depending on user software (find on w3 schools but useful to include serif or sans-serif)
+		colour
+			hexidecimal value #0000ff (first two numbers are red, 2nd two are green and last two are blue. ff is highest value) RGB combo.
+		font-style 
+			can choose italic
+		font-weight
+			can give numeric value or state bold
+		font-size
+			provide by pixel e.g. 24px - default browser roughly 16px. Pixels are absolute measurement but relative to device.
+		text-tranforms
+			allows to capitalise the content, lowercase/uppercase etc
+		text-align
+			centre, left, right etc. 
+
+
+	Relative styling
+
+		Relative percentage (%)
+			font-size: 120%; takes the browser default size and ups to 120% of default.
+		Relative em (~em)
+			font-size: 2em; relative to the size of the font that is currently being applied and identifies by measuring against an 'm'
+
+		Relative sizing does not have an overriding effect but a cumulative effect on the style of where it is being applied. 
+
+
+		Best practice to use percentage in the body (or css sheet)
+
+		test git
+
+
