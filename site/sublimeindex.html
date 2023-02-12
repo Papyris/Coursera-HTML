@@ -309,4 +309,223 @@ Styling Text
 
 		test git
 
+The Box Model
 
+		Every element in HTML considered a box
+
+		The box model refers to the components that make up a html box (padding, borders, margins, content, rules that govern how the box is laid out)
+
+		In inspector element - user agent style is the default browser styles. 
+
+		by setting Margin: 0; and Padding: 0; we can override the default margins of the browser
+
+		With padding, can select by pixel e.g. 10px 10px 10px 10px (top, right, bottom, left e.g NESW), if all padding is same, only need to add a single 10px.
+
+		border is another property in style.
+		background-colour
+		width
+		height
+		box-sizing: border-box:
+
+		if you added width but not height then the browser will automatically adjust the height in  order to fit the content. If both are specified and the content does not fit then the content will flow over and there is risk that the next element will be on top of each other. Property is used here in order to define the outcome. 
+
+		overflow:
+
+		visible - default, content will spill over
+		hidden - content will only show up to defined values
+		auto - adds scroll bar to search within
+		scroll - always adds scroll bars even where not required
+
+
+		Adding padding, border, width then the width would correlate to the width of the content not inclusive of border/padding.
+
+		CSS 3 added new property to contain all the above into a single value using:
+
+		box-sizing: border-box:
+
+		By adding the above, then all the values set would be contained.
+
+		To set default values across all elements, then add the universal selector as below
+
+			<style>
+				* {
+					box-sizing: border-box;
+				}
+			</style>
+
+		* applies to every element. This is used to default rather than putting on a parent element as it would be the rule of specificity.
+
+		Cumulative margins - width margins add up and will be cumulative, whereas height margins for boxes on top of each other (two <div> elements, the margins collapse and use the largest)
+
+		margin attribute covers all sides but can define margin-top, margin-bottom etc
+
+
+Background property
+
+		background-colour					Sets colour
+		background-image: url("...")		Sets image
+		background-repeat: 
+		background-position
+		background							Used to specifiy all together and would override. All other sub-propoerties can be added in the background
+
+Positiing elements by floating
+
+		adding property float into the style can move an element. 
+
+		e.g. float: right; 
+
+		This would take the element and move to the right of the page. any subsequent elements would move up as the float takes the element out of the document flow. 
+
+		float: left; 
+
+		this would allow to add boxes next to each other. As above any subsequent elements would move up as the floated elements would be taken out of the document flow 
+
+		To prevent documents moving up too much and spilling into previous elements use property 
+
+		clear: ...; (left; both; right;)
+
+		This would make sure that the elements would not allow anything floating to the left of it.
+
+		To make sure nothing floats either side use sub-property both; 
+
+		consider using pixels or percentage for boxes. If you use pixels it will always be that size whereas percentage would allow for  automatic adjustment where the browser changes size for example. 
+
+		widht: 50%; 
+
+Relavtive and abolute element positioning
+
+		Static positioning - other term for "Normal document flow"
+
+		Default for all except html
+
+	Relative positioning - element positioned relative to normal document flow
+
+		Positioning CSS (offset) property has: top, bottom, left, right
+
+		Element set with relvtive positioning is not taken out of NDF
+
+		e.g. 
+
+			p {
+				position: relative;
+				top: 10ppx
+				bottom: 10px
+			}
+
+		Applying a fixed position in NDF
+
+		For the sub-properties, think that the box is moving FROM - i.e. FROM top; 10px = moving down 10px. FROM left; 10px = moving right 10px.Can also use negative values e.g. bottom: -10px (moving down)
+		
+		The positioning is based from the top left corner of the box. 
+
+		Subseuqent elements would remain in same position (considering the original positon of the above element even though the box may have moved)
+
+	Absolute Positions
+
+		All offsets are relative to the position of the nearest ancestor which has positioning set on it other than static
+
+		By default, html is the only element which is non-static set - it is set with relative. 
+
+		Element taken out of NDF meaning that subsequent boxes will move up. 
+
+		Everything child element will be offset within a container element that has been offset with an absolute positioning
+
+Media Queries
+
+		Media queries help you adapt the CSS for the device being used (e.g. whether you're looking on a laptop or phone)
+
+		Property is @media 
+
+			This is followed by a media feature (resolves to true or false) and curly braces. Within the braces you have the styles.
+
+				@media (max-width: 300px;)	{
+					p { colour: blue;}
+				}
+
+			If the media feature resolves to true, then the styles within the braces apply. 
+
+		Media queries:
+
+			max-width: 199px
+			min-width: 299px
+			orientation: portrait/landscape
+			screen (...)
+			print (...)
+			max-height:
+			min-height:
+
+		Most common is the width. 
+
+			In order to combine queries, use and as the operator e.g.
+
+			@media (min-width: 20px) and (maz-wdith: 30px) {}
+
+			Using , comma operator would treat the queries as an OR condition
+
+		Be careful not to overlap media boundaries. e.g.
+
+			@media (min-width: 10px) and (max-width: 1999px) {}
+			@media (min-width: 2000px) and (max-width: 4000px) {}
+
+		Styles to be applied irresective of browser size (base styling) can be add outside of the media queries. e.g. 
+
+			p { colour: blue;}
+			@media 1 {}
+			@media 2 {}
+
+
+Responsive design
+
+	Site designed to adapt its layout to the viewing environment (device for e.g.) by using fluid proportion-based grids, flexible images and CSS 3 media queries. 
+
+		Proportion-based grids hints to using a percentage.
+
+			"content is like water"
+				'Put water in a cup, it becomes the cup'
+				'Put water in a jug, it becomes the jug'
+				'Put water in a teapot, it becomes the teapot'
+
+		Alternative to responsive design is using a server to detect the user agent i.e. browser that is being used to serve the most appropriate layout of the html content. Cons of this is that it is not a one-size fits all on devices and responsive design tries to mitigate.
+
+		e.g. m.mysite.com OR www.mysite.com
+
+	Responsive design uses 12-colum grid layout (factors of 12 = 1,2,3,4,6,12)
+
+		E.g. 3x3x3x3 (content fitting across 12 columns) OR 4x4x4 OR 6x6, or 8x4 etc etc. 
+
+		Using this method, we know that regardless of size, the total is 100%
+
+			one column of 100% width is 8.333%
+
+			Using 3x3x3x3, each content element would then be 25% of total page layout
+
+		Nested grids are also an option with this method (multiple sets of 12 column grids within the overall 12 columns)
+
+
+		Setting up the query, can divide the columns for classes. e.g.
+
+			@media (min-width: 100px) {
+				.column-1, .column-2, .column3 {
+					float: left;
+					border: 1px;
+				}	
+			}
+
+			.column-1 {
+				witdh: 8.33%
+			}
+
+			.column-2 {
+				width: 16.66%
+			}
+			
+				Continue with this to make up 100%, in the above example, as there are only three classes (we can refer to these as columns if declared that way then each other of the width %s would be 33.33%)
+
+		Making the classes unique for each query e..g column-small-1, column-med-1, column-lrg-1, we can assign these classes to the same elements in the html and not have any contention as only one would be used.
+
+			e.g. <p class="column-med-1 column-lrg01">Text shown here</p>
+
+		Sometimes the media queries don't always do exactly as needed as devices may try to zoom out in order to fit the content. To overcome this we can add a new meta element as below to tell the browser that the site is responsive as we can to define the viewport (i.e. what can be used to view content)
+
+			<meta name="viewport" content="width=device-width, initial-scale=1" >
+			
