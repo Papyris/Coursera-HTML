@@ -529,3 +529,69 @@ Responsive design
 
 			<meta name="viewport" content="width=device-width, initial-scale=1" >
 			
+
+
+Twitter Bootstrap
+
+		CSS framework design by twitter engineers
+
+		Most popular HTML, CSS and JS framework for developing responsive, mobile first projects on the web
+
+		Mobile first == plan for mobile from the start
+
+		CSS framework should be mobile ready 
+
+		one complaint of using boostrap is that it is too big or too bloated and uses a number of functionalities that are not necessarily relevant, however this CSS framework could save a lot of time rather than writing from stratch. Also use selective download to only pick the bits that you want. 
+
+	Set up of bootstrap
+
+		getbootstrap.com
+
+		bootstrap.js requires a version of jquery. 
+
+		jquery.com
+		
+		Custom style css are declared in the head AND after bootstrap.css as we want to override the bootstrap with our own styles but use the bootstrap as a base. 
+
+
+		Js files are declared in the body tag. e.g. 
+
+			<body>
+				<script src="...>"></script>
+			</body>
+
+		JQuery will be declarared first and then bootstrap JS will be declared, followed by any custom JS. 
+
+	Bookstrap Grid System
+
+		bootstrap grid must alwyas be inside a container wrapper (or container-fluid wrapper). Container-fluid, stretches layout to full width of the browser. container has fixed width but still responsive on the width of the browser. 
+
+		<div class="container-fluid"></div>
+
+		next is the horizontal row. row class creates horizontal groups of columns meaning columns interact with each other as a group but independently from other columns in another row. Also applied a negative margin to counteract the padding the container class sets up. 
+
+		next is column class structure is col-size-span
+
+		size = screen width range identifier. i.e. columns will stack (i.e. collapse) below a set width. Unless other rules apply. 
+		span = number of columns to be shown - values 1 through 12. (8.33%).
+
+		Column split, the elements would need to add up to 12. So if for example you had 3 columns, you would use the col-size-4 class as 3x4 is 12. 
+		Another example were if you wanted two columns then it would be col-size-6. i.e. 6x2 = 12. 
+
+		In order to code for responsive, ensure you specify all classes of the grid system. e.g. 
+
+		<div class='col-md-4 col-sm-6'>Content Here</div>
+		<div class='col-md-4 col-sm-6'>Content Here</div>
+		<div class='col-md-4 col-sm-6'>Content Here</div>
+
+		In the above example, based on the size of the browser, if over 992px (bootstrap defined use website for guidance), then the three divs will be split on a single row across the screen (i.e. 33.33%). If under 992px, then the css style has defined 6, meaning that each row will take up 50% of the screen. div 1 and 2 would then be on a single row each taking 50%, with div 3 wrapping onto the next row. 
+
+		Based on the bootstrap, if you want to keep a layout not matter the size of the screen then use col-xs-span. Using the xs size range, then it will only do as instructed. 
+
+		
+
+
+
+		
+
+
