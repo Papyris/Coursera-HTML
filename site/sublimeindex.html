@@ -9,6 +9,12 @@
 </body>
 </html>
 
+
+<!-- Browser sync run the below
+
+browser-sync start --server --directory --files "*" -->
+
+
 <!--block level elements can contain other blockline or inline elements. Start on a new line. 
 	In line elements render on the same line and can only contain other inline elements
 	HTML5 replaces the above with set of content categories
@@ -225,6 +231,9 @@ Style placement
 
 	<link rel="stylesheet" type="text/css" href="stylesheet.css">
 
+	going into further folders type href='folder/file',
+	going into previous directories type href="../file" or '../../folder/file'
+
 	style='visibility: hidden;'
 
 	^^ can use this to hide certain elements
@@ -380,7 +389,7 @@ Positiing elements by floating
 
 		this would allow to add boxes next to each other. As above any subsequent elements would move up as the floated elements would be taken out of the document flow 
 
-		To prevent documents moving up too much and spilling into previous elements use property 
+		To prevent documents moving up too much and spilling into previous elements use property - To resume NDF (normal document flow)
 
 		clear: ...; (left; both; right;)
 

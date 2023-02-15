@@ -5,45 +5,67 @@
 
 
 h1 {
-	background: blueviolet;
-	color: darkred transparent;
-	border: thick;
-	border-color: black;
-
+	background: green;
+	color: black; transparent;
+	border: 3px solid black;
 	text-align: center;
 /*	font-family: helvetica, sans-serif;*/
 	font-weight: bold;
+	margin-bottom: 15px;
 }
+
+h2 {position: relative;}
+
+div { 
+/*	padding: 5px;*/
+	border-color: black;
+	border-style: solid;
+	margin-left: 5px;
+	margin-right: 5px;
+	margin-bottom: 15px;
+ }
+
+ .section {
+ 	color: black;
+ 	border: black solid;
+ 	background: right darkred;
+ 	text-align: right;
+ 	padding: 3px;
+ }
+#Title1 {
+/*	text-align: right;*/
+	background-color:lightblue;
+}
+
+#Title2 {
+/*	text-align: right;*/
+	background-color: green;
+	color: white;
+}
+
+#Title3 {
+/*	text-align: right;*/
+	background-color:lightgrey;
+}
+p { 
+/*	border: 5px;*/
+/*		margin: 1px;*/
+/*	border-width: 1px;*/
+/*	margin-bottom: 15px;*/
+
+ }
 
 @media (min-width: 992px) {
 	.col-lg-4 {
 		float: left;
-		width: 33.3%;
-		border: 5px;
-		padding: 5px;
-/*		margin: 1px;*/
-		border-color: black;
-		border-style: solid;
-		border-width: 1px;
+		width: 33%;
 		
-		
-		
-		
-
 	}
 }
 @media (min-width: 768px) and (max-width: 991px) {
 	.col-md-6 {
 		float: left;
 		width: 50%;
-		border: 5px;
-		padding: 5px;
-/*		margin: 1px;*/
-		border-color: black;
-		border-style: solid;
-		border-width: 1px;
-		
-
 	}
 }
 
@@ -51,24 +73,11 @@ h1 {
 	.col-sm-12 {
 		float: left;
 		width: 100%;
-		border: 5px;
-		padding: 5px;
-/*		margin: 1px;*/
-		border-color: black;
-		border-style: solid;
-		border-width: 1px;
 	}
 }
 
 
 
-div {
-	text-align: right;
-}
 
-#Section1 { background-color:lightblue; }
-#Section2 { background-color: green;
-			color: white;}
-#Section3 { background-color: lightgrey; }
 
 
