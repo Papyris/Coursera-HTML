@@ -5,17 +5,16 @@
 	margin-bottom: 10px;
 }
 
-
 h1 {
 	color: black;
 	text-align: center;
 	margin-top: 15px;
 	padding: 5px;
+	font-size: 1.75em;
 
 }
 
 div {
-	background-color: lightblue;
 	padding: 5px;
 	border: 1px solid black;
 	float: left;
@@ -23,15 +22,14 @@ div {
 
 }
 
-
-p {
-	padding: 5px;
-	clear: both;
-}
+div#Title1 {background-color: darkkhaki;}
+div#Title2 {background-color: darkseagreen;}
+div#Title3 {background-color: darkorchid;}
 
 a {
 	padding: 5px;
 	float: right;
+	font-size: 1.25em;
 }
 
 a.heading1 {
@@ -49,38 +47,47 @@ a.heading3 {
 	border: 1px solid black;
 }
 
+p {
+	padding: 5px;
+	clear: both;
+	font-size: 1em;
+}
+
 @media (min-width: 992px) {
 	.col-lg-4 {
 		width:calc(33.3% - 45px);
 		box-align: center;
 		margin: 15px;
-
-
 	}
+
 	#Title1 {
-	margin-left: 40px;
-} 
-#Title3 {
-	margin-right: 25px;
+		margin-left: 40px;
+	}
+
+	#Title3 {
+		margin-right: 25px;
+	}
+
 }
 
-	}
-
-
 @media (min-width: 768px) and (max-width: 991px) {
-	.col-md-6 { width: calc(50% - 45px);
-		margin: 15px;}
-	.col-md-12 {width: calc(100% - 45px);
-		margin: 15px}
-	
+	.col-md-6 { 
+		width: calc(50% - 45px);
+		margin: 15px;
 	}
 
-
-
+	.col-md-12 {
+		width: calc(100% - 45px);
+		margin: 15px
+	}
+	
+}
 
 @media (max-width: 767px) {
-	.col-sm-12 {width: calc(100% - 80px);
+	.col-sm-12 {
+		width: calc(100% - 80px);
 		margin-left: 40px;
-		margin-right: 40px;}
+		margin-right: 40px;
+	}
 }
 
