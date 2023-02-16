@@ -9,6 +9,10 @@
 h1 {
 	color: black;
 	text-align: center;
+/*	background-color: darkblue;*/
+/*	border: 1px solid black;*/
+/*	margin: auto;*/
+/*	margin-bottom: 15px;*/
 	margin-top: 15px;
 	padding: 5px;
 
@@ -18,7 +22,11 @@ div {
 	background-color: lightblue;
 	padding: 5px;
 	border: 1px solid black;
+/*	margin: auto;*/
+/*	margin-left: 2px;*/
+/*	margin-right: 2px;*/
 	float: left;
+/*	margin-bottom: 10px;*/
 	width: 300px;
 
 }
@@ -26,27 +34,40 @@ div {
 
 p {
 	padding: 5px;
+/*	margin: 2px;*/
+/*	margin-bottom: 10px;*/
 	clear: both;
+/*	font-size: 125%;*/
 }
+
+/*#right {
+	position: absolute;
+	right: -90%;
+	padding: 5px;	
+}*/
 
 a {
 	padding: 5px;
 	float: right;
+/*	font-size: 175%;*/
 }
 
 a.heading1 {
 	background-color: lightcoral;
 	border: 1px solid black;
+/*	float: right;	*/
 }
 
 a.heading2 {
 	background-color: lightpink;
 	border: 1px solid black;
+/*	float: right;*/
 }
 
 a.heading3 {
 	background-color: lightgreen;
 	border: 1px solid black;
+/*	float: right;*/
 }
 
 @media (min-width: 992px) {
