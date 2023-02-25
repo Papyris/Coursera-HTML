@@ -24,6 +24,7 @@ div {
 
 }
 
+.row { width:100% }
 
 div#Title1 {background-color: darkkhaki;}
 div#Title2 {background-color: darkseagreen;}
